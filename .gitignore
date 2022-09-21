@@ -2,3 +2,5 @@
 awsset
 
 *.zip
+
+.terraform*
