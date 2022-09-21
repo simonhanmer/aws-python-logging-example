@@ -57,7 +57,9 @@ resource "aws_iam_role" "event_dumper_lambda_role" {
           Sid = "ListS3Buckets"
           Action = "s3:ListAllMyBuckets"
           Effect = "Allow"
-          Resource = [ "*" ]
+          Resource = [
+            "arn:aws:s3:::*"
+          ]
         },
       ]      
     })
