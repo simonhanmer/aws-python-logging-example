@@ -6,8 +6,8 @@ import boto3
 
 
 logLevel = os.getenv("LOG_LEVEL", "DEBUG").upper()
-logging.basicConfig(level=logLevel)
 logger   = logging.getLogger()
+logger.setLevel(logLevel)
 
 
 def lambda_handler(event, context):
@@ -39,5 +39,6 @@ def list_buckets():
 
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logLevel)
     demo_logger()
     list_buckets()
